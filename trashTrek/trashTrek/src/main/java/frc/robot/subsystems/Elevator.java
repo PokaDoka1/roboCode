@@ -42,17 +42,12 @@ public class Elevator extends SubsystemBase {
     return m_encoder.getPosition();
   }
 
-  public void displayLimitSwitchEnabled(){
-    SmartDashboard.putBoolean("limit switch state", isLimitSwitchEnabled());
-  }
-
-  public void displayElevatorHeight(){
-    SmartDashboard.putNumber("Elevator Height", getEncoderPosition());
-  }
 
   @Override
   public void periodic() {
     // This method will be called once per scheduler run
+    SmartDashboard.putBoolean("limit switch state", isLimitSwitchEnabled());
+    SmartDashboard.putNumber("Elevator Height", getEncoderPosition());
   }
 
   @Override
